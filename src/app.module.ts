@@ -13,8 +13,7 @@ import { ConfigModule } from '@nestjs/config'
   imports: [
     ConfigModule.forRoot(),
     // MongooseModule.forRoot('mongodb://localhost:27017/repuesto', { 
-      MongooseModule.forRoot('mongodb://mongo:abmyVYcQtJTtpfJreXFOaVFlZNtXrQdO@junction.proxy.rlwy.net:10962', {
-    }),
+      MongooseModule.forRoot(`${process.env.MONGODB_URL}`),
     RepuestosModule,
     UserModule,
   ],
