@@ -1,0 +1,76 @@
+//Crear un nuevo repuesto.
+POST /repuestos
+  - Request Body: (permite omitir el campo anio y foto)
+    {
+      "nombre": "string",
+      "marca": "string",
+      "modelo": "string",
+      "anio": number,
+      "precio": number,
+      "foto": "string"
+    }
+  - Response:
+    {
+      "id": number,
+      "nombre": "string",
+      "marca": "string",
+      "modelo": "string",
+      "anio": number,
+      "precio": number,
+      "foto": "string"
+    }
+
+// Obtener todos los repuestos
+GET /repuestos
+  - Response:
+    [
+      {
+        "id": number,
+        "nombre": "string",
+        "marca": "string",
+        "modelo": "string",
+        "anio": number,
+        "precio": number,
+        "foto": "string"
+      },
+      ...
+    ]
+
+//Obtener un repuesto por ID.
+GET /repuestos/:id 
+  - Response:
+    {
+      "id": number,
+      "nombre": "string",
+      "marca": "string",
+      "modelo": "string",
+      "anio": number,
+      "precio": number,
+      "foto": "string"
+    }
+
+//Actualizar un repuesto por ID.
+PUT /repuestos/:id
+  - Request Body (se pueden proporcionar uno o más campos para actualizar):
+    {
+      "nombre": "string",
+      "marca": "string",
+      "modelo": "string",
+      "anio": number,
+      "precio": number,
+      "foto": "string"
+    }
+  - Response:
+    {
+      "id": number,
+      "nombre": "string",
+      "marca": "string",
+      "modelo": "string",
+      "anio": number,
+      "precio": number,
+      "foto": "string"
+    }
+
+// Eliminar un repuesto por ID.
+DELETE /repuestos/:id 
+  - Response: No content (204)
